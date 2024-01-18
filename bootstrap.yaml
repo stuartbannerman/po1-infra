@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     chart: apps
-    repoURL: https://github.com/stuartbannerman/po1-infra-test
+    repoURL: https://github.com/stuartbannerman/po1-infra
     targetRevision: HEAD
   syncPolicy:
     syncOptions:
