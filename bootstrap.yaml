@@ -11,8 +11,8 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    chart: apps
     repoURL: https://github.com/stuartbannerman/po1-infra
+    path: apps
     targetRevision: HEAD
   syncPolicy:
     automated:
