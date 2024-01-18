@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: boostrap
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: apps
+    repoURL: https://github.com/stuartbannerman/po1-infra-test
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - Validate=false
+      - PruneLast=true
+      - RespectIgnoreDifferences=true
+      - Replace=true
+      - CreateNamespace=true
+---
