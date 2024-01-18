@@ -15,10 +15,6 @@ spec:
     repoURL: https://github.com/stuartbannerman/po1-infra
     targetRevision: HEAD
   syncPolicy:
-    syncOptions:
-      - Validate=false
-      - PruneLast=true
-      - RespectIgnoreDifferences=true
-      - Replace=true
-      - CreateNamespace=true
----
+    automated:
+      prune: true
+      selfHeal: true
