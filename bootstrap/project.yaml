@@ -8,7 +8,7 @@ spec:
     - group: '*'
       kind: '*'
   destinations:
-    - namespace: dev
+    - namespace: po1
       server: https://kubernetes.default.svc
     - name: '*'
       namespace: '*'
