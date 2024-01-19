@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: po1
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: po1
+  destination:
+    namespace: po1
+    server: https://kubernetes.default.svc
+  sources:
+    - chart: po1-gateway
+      repoURL: 236731556556.dkr.ecr.eu-west-1.amazonaws.com/
+      targetRevision: '0.0.1'
+      helm:
+        parameters:
+          - name: installCRDs
+            value: 'true'
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true

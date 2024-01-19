@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: po1
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - namespace: dev
+      server: https://kubernetes.default.svc
+    - name: '*'
+      namespace: '*'
+      server: https://kubernetes.default.svc
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  roles:
+    - description: Project role to create and sync apps from a CI/CD pipeline
+      name: github-create-sync
+      policies:
+        - p, proj:po1:github-create-sync, applications, get, po1/*, allow
+        - p, proj:po1:github-create-sync, applications, create, po1/*, allow
+        - p, proj:po1:github-create-sync, applications, update, po1/*, allow
+        - p, proj:po1:github-create-sync, applications, delete, po1/*, allow
+        - p, proj:po1:github-create-sync, applications, sync, po1/*, allow
+  sourceRepos:
+    - '*'

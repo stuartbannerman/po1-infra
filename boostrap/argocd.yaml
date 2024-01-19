@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/stuartbannerman/po1-infra
-    path: apps
+    path: bootstrap
     targetRevision: HEAD
   syncPolicy:
     automated:

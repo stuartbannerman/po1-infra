@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rancher
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: rancher
+  destination:
+    namespace: cattle-system
+    server: https://kubernetes.default.svc
+  sources:
+    - chart: rancher-stable
+      repoURL: releases.rancher.com/server-charts/stable
+      targetRevision: '2.7.9'
+      helm:
+        parameters:
+          - name: installCRDs
+            value: 'true'
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
