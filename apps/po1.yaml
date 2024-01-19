@@ -12,12 +12,8 @@ spec:
     server: https://kubernetes.default.svc
   sources:
     - chart: po1-gateway
-      repoURL: 236731556556.dkr.ecr.eu-west-1.amazonaws.com/
-      targetRevision: '0.0.1'
-      helm:
-        parameters:
-          - name: installCRDs
-            value: 'true'
+      repoURL: https://github.com/stuartbannerman/po1-gateway-infra
+      targetRevision: HEAD
   syncPolicy:
     automated: {}
     syncOptions:
