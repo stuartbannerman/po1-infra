@@ -11,7 +11,7 @@ spec:
     namespace: po1
     server: https://kubernetes.default.svc
   sources:
-    - chart: po1-gateway
+    - path: envs/prod-eu
       repoURL: https://github.com/stuartbannerman/po1-gateway-infra
       targetRevision: HEAD
   syncPolicy:
