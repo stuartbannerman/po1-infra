@@ -1,26 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: boostrap
+  name: bootstrap
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
   project: default
-  source:
-    repoURL: https://github.com/stuartbannerman/po1-infra
+  sources:
+  - repoURL: https://github.com/stuartbannerman/po1-infra
     path: bootstrap
     targetRevision: HEAD
-  sources:
-    - repoURL: https://github.com/stuartbannerman/po1-infra
-      path: bootstrap
-      targetRevision: HEAD
-    - repoURL: https://github.com/stuartbannerman/po1-infra
-      path: apps
-      targetRevision: HEAD
+  - repoURL: https://github.com/stuartbannerman/po1-infra
+    path: apps
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true

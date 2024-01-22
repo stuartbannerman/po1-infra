@@ -111,7 +111,7 @@ data:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: boostrap
+  name: bootstrap
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
