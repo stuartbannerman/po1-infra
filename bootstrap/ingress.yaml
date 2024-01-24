@@ -19,19 +19,19 @@ spec:
     http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
           service:
             name: argocd-grpc
             port:
               number: 443
-        pathType: Prefix
       - path: /
+        pathType: Prefix
         backend:
           service:
             name: argocd-server
             port:
               number: 443
-        pathType: Prefix
   tls:
   - hosts:
     - po1-argocd.dev.travcorpservices.com
