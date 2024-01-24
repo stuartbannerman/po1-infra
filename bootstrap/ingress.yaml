@@ -10,6 +10,7 @@ metadata:
     alb.ingress.kubernetes.io/group.name: po1
     alb.ingress.kubernetes.io/group.order: '1'
     alb.ingress.kubernetes.io/conditions.argocd-grpc: '[{"field":"http-header","httpHeaderConfig":{"httpHeaderName": "Content-Type", "values":["application/grpc"]}}]'
+    alb.ingress.kubernetes.io/target-type: ip
   name: argocd
   namespace: argocd
 spec:
