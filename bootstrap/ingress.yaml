@@ -7,9 +7,9 @@ metadata:
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:236731556556:certificate/85b8c721-7632-45cc-b8d9-c8fabf74fd86
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
-    alb.ingress.kubernetes.io/conditions.argogrpc: '[{"field":"http-header","httpHeaderConfig":{"httpHeaderName": "Content-Type", "values":["application/grpc"]}}]'
     alb.ingress.kubernetes.io/group.name: po1
     alb.ingress.kubernetes.io/group.order: '1'
+    alb.ingress.kubernetes.io/conditions.argocd-grpc: '[{"field":"http-header","httpHeaderConfig":{"httpHeaderName": "Content-Type", "values":["application/grpc"]}}]'
   name: argocd
   namespace: argocd
 spec:
@@ -21,7 +21,7 @@ spec:
       - path: /
         backend:
           service:
-            name: argogrpc
+            name: argocd-grpc
             port:
               number: 443
         pathType: Prefix
