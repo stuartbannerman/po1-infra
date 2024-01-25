@@ -1,6 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
+  name: echo
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - namespace: echo
+      server: https://kubernetes.default.svc
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  sourceRepos:
+    - '*'
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
   name: po1
   namespace: argocd
 spec:
@@ -10,8 +28,23 @@ spec:
   destinations:
     - namespace: po1
       server: https://kubernetes.default.svc
-    - name: '*'
-      namespace: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  sourceRepos:
+    - '*'
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: po1-pr123
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - namespace: po1-pr123
       server: https://kubernetes.default.svc
   namespaceResourceWhitelist:
     - group: '*'

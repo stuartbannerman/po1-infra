@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: po1
+  name: po1-pr123
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: po1
+  project: po1-pr123
   destination:
-    namespace: po1
+    namespace: po1-pr123
     server: https://kubernetes.default.svc
   sources:
     - repoURL: https://github.com/stuartbannerman/po1-gateway-infra

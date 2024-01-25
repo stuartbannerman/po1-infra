@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: po1
+  name: echo
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: po1
+  project: echo
   destination:
-    namespace: po1
+    namespace: echo
     server: https://kubernetes.default.svc
   sources:
-    - repoURL: https://github.com/stuartbannerman/po1-gateway-infra
-      path: envs/dev-eu
+    - repoURL: https://github.com/stuartbannerman/po1-echo-infra
+      path: .
       targetRevision: HEAD
   syncPolicy:
     automated: {}
