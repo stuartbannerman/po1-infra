@@ -8,7 +8,7 @@ ingress:
   extraAnnotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/backend-protocol: HTTPS
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:236731556556:certificate/98efbbad-6138-4ed8-be6a-2bfe8de5e999
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:236731556556:certificate/e3aa17b0-be97-4176-b398-8dbb70885b0d
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/group.name: po1
