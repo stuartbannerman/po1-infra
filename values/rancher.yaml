@@ -1,5 +1,6 @@
 auditLog:
   level: 2
+replicas: 2
 hostname: po1-rancher.dev.travcorpservices.com
 installCRDs: 'true'
 tls: external
