@@ -65,7 +65,7 @@ spec:
     - group: '*'
       kind: '*'
   destinations:
-    - namespace: po1
+    - namespace: 'po1*'
       server: https://kubernetes.default.svc
   namespaceResourceWhitelist:
     - group: '*'
