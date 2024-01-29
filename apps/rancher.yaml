@@ -11,8 +11,8 @@ spec:
     namespace: cattle-system
     server: https://kubernetes.default.svc
   sources:
-    - chart: rancher-stable
-      repoURL: releases.rancher.com/server-charts/stable
+    - chart: rancher-latest
+      repoURL: releases.rancher.com/server-charts/latest
       targetRevision: '2.7.9'
       helm:
         parameters:
