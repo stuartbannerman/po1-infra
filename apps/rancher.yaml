@@ -16,16 +16,12 @@ spec:
       targetRevision: '2.7.9'
       helm:
         valueFiles:
-        - values/rancher.yaml
-        # parameters:
-        #   - name: 'installCRDs'
-        #     value: 'true'
-        #   - name: 'tls'
-        #     value: external
-        #   - name: 'hostname'
-        #     value: 'po1-rancher.dev.travcorpservices.com'
-        #   - name: 'ingress.ingressClassName'
-        #     value: alb
+        # $values reference the below repo
+        - $values/values/rancher.yaml
+      # Repo that stores the values for the above chart
+    - repoURL: https://github.com/stuartbannerman/po1-infra
+      targetRevision: HEAD
+      ref: values
   syncPolicy:
     automated: {}
     syncOptions:
