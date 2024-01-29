@@ -12,6 +12,7 @@ spec:
     server: https://kubernetes.default.svc
   sources:
     - repoURL: https://github.com/travcorp/po1-infra
+      path: .
       targetRevision: HEAD
   syncPolicy:
     automated: {}
