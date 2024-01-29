@@ -2,21 +2,19 @@ auditLog:
   level: 2
 hostname: po1-rancher.dev.travcorpservices.com
 installCRDs: 'true'
+tls: external
 ingress:
   ingressClassName: alb
   extraAnnotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/backend-protocol: HTTPS
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:236731556556:certificate/98efbbad-6138-4ed8-be6a-2bfe8de5e999
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/group.name: po1
     alb.ingress.kubernetes.io/group.order: '2'
+    alb.ingress.kubernetes.io/conditions.rancher: '[{"field":"path-pattern","pathPatternConfig":{"values":["/*"]}}]'
     alb.ingress.kubernetes.io/target-type: ip
-
-    alb.ingress.kubernetes.io/conditions.rancher: >
-      [{"field":"path-pattern","pathPatternConfig":{"values":["/*"]}}]
-
-    # alb.ingress.kubernetes.io/subnets: subnet-XXX,subnet-XXX,subnet-XXX
-    # alb.ingress.kubernetes.io/success-codes: 200,404,301,302
-    # kubernetes.io/ingress.class: alb
-tls: external
+  tls:
+  - hosts:
+    - po1-rancher.dev.travcorpservices.com
