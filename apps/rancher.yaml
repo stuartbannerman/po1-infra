@@ -18,6 +18,8 @@ spec:
         parameters:
           - name: 'installCRDs'
             value: 'true'
+          - tls:
+            value: external
           - name: 'hostname'
             value: 'po1-rancher.dev.travcorpservices.com'
           - name: 'ingress.ingressClassName'
