@@ -18,7 +18,7 @@ spec:
         parameters:
           - name: 'installCRDs'
             value: 'true'
-          - tls:
+          - name: 'tls'
             value: external
           - name: 'hostname'
             value: 'po1-rancher.dev.travcorpservices.com'
