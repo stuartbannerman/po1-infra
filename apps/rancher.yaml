@@ -15,15 +15,16 @@ spec:
       repoURL: https://releases.rancher.com/server-charts/latest
       targetRevision: '2.7.9'
       helm:
-        parameters:
-          - name: 'installCRDs'
-            value: 'true'
-          - name: 'tls'
-            value: external
-          - name: 'hostname'
-            value: 'po1-rancher.dev.travcorpservices.com'
-          - name: 'ingress.ingressClassName'
-            value: alb
+        valueFiles: values/rancher.yaml
+        # parameters:
+        #   - name: 'installCRDs'
+        #     value: 'true'
+        #   - name: 'tls'
+        #     value: external
+        #   - name: 'hostname'
+        #     value: 'po1-rancher.dev.travcorpservices.com'
+        #   - name: 'ingress.ingressClassName'
+        #     value: alb
   syncPolicy:
     automated: {}
     syncOptions:
