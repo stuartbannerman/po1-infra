@@ -19,9 +19,9 @@ spec:
           - name: 'installCRDs'
             value: 'true'
           - name: 'hostname'
-            value: 'rancher.my.org'
+            value: 'po1-rancher.dev.travcorpservices.com'
           - name: 'ingress.ingressClassName'
-            value: nginx
+            value: alb
   syncPolicy:
     automated: {}
     syncOptions:
