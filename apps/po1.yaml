@@ -11,8 +11,8 @@ spec:
     namespace: po1
     server: https://kubernetes.default.svc
   sources:
-    - repoURL: https://github.com/stuartbannerman/po1-gateway-infra
-      path: envs/dev-eu
+    - repoURL: https://github.com/travcorp/po1-gateway-infra
+      path: .
       targetRevision: HEAD
   syncPolicy:
     automated: {}

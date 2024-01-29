@@ -6,13 +6,13 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: po1-pr123
+  project: po1
   destination:
     namespace: po1-pr123
     server: https://kubernetes.default.svc
   sources:
-    - repoURL: https://github.com/stuartbannerman/po1-gateway-infra
-      path: envs/dev-eu-pr123
+    - repoURL: https://github.com/travcorp/po1-gateway-infra
+      path: .
       targetRevision: HEAD
   syncPolicy:
     automated: {}

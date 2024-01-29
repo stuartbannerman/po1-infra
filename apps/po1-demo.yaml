@@ -6,12 +6,12 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: po1-demo
+  project: po1
   destination:
     namespace: po1-demo
     server: https://kubernetes.default.svc
   sources:
-    - repoURL: https://github.com/travcorp/po1-infra
+    - repoURL: https://github.com/travcorp/po1-gateway-infra
       path: .
       targetRevision: HEAD
   syncPolicy:
