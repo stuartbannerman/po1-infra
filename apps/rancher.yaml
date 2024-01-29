@@ -15,7 +15,8 @@ spec:
       repoURL: https://releases.rancher.com/server-charts/latest
       targetRevision: '2.7.9'
       helm:
-        valueFiles: values/rancher.yaml
+        valueFiles:
+        - values/rancher.yaml
         # parameters:
         #   - name: 'installCRDs'
         #     value: 'true'
