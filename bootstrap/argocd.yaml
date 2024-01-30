@@ -21,3 +21,10 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  ignoreDifferences:
+  - group: ''
+    jsonPointers:
+    - /data/password
+    kind: Secret
+    name: argocd-github-pat
+    namespace: argocd
