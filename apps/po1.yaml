@@ -14,6 +14,9 @@ spec:
     - repoURL: https://github.com/stuartbannerman/po1-gateway-infra
       path: envs/dev
       targetRevision: HEAD
+    - repoURL: https://github.com/stuartbannerman/po1-service-demo-infra
+      path: envs/dev
+      targetRevision: HEAD
   syncPolicy:
     automated: {}
     syncOptions:
