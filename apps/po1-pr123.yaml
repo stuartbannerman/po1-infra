@@ -12,7 +12,7 @@ spec:
     server: https://kubernetes.default.svc
   sources:
     - repoURL: https://github.com/stuartbannerman/po1-gateway-infra
-      path: envs/dev-eu
+      path: envs/dev-pr123
       targetRevision: HEAD
   syncPolicy:
     automated: {}
