@@ -11,7 +11,7 @@ spec:
     namespace: po1-pr123
     server: https://kubernetes.default.svc
   sources:
-    - repoURL: https://github.com/travcorp/po1-gateway-infra
+    - repoURL: https://github.com/stuartbannerman/po1-gateway-infra
       path: .
       targetRevision: HEAD
   syncPolicy:
