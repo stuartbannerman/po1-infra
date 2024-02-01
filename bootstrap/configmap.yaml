@@ -9,3 +9,35 @@ metadata:
 data:
   # add an additional local user with apiKey and login capabilities
   accounts.gitlab: apiKey, login
+  url: https://po1-argocd.dev.travcorpservices.com/
+  oidc.config: |
+        name: Azure
+        issuer: https://login.microsoftonline.com/c8e16ff7-b48e-48dc-8e88-56ca27c5c21c/v2.0
+        clientID: fe52fe9f-98eb-4635-945c-16b5350ac3f8
+        clientSecret: $oidc.azure.clientSecret
+        requestedIDTokenClaims:
+          groups:
+              essential: true
+        requestedScopes:
+          - openid
+          - profile
+          - email
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-rbac-cm
+  namespace: argocd
+  labels:
+    app.kubernetes.io/name: argocd-rbac-cm
+    app.kubernetes.io/part-of: argocd
+data:
+  policy.default: role:readonly
+  policy.csv: |
+      p, role:po1-k8-dev-admin, applications, *, */*, allow
+      p, role:po1-k8-dev-admin, clusters, get, *, allow
+      p, role:po1-k8-dev-admin, repositories, get, *, allow
+      p, role:po1-k8-dev-admin, repositories, create, *, allow
+      p, role:po1-k8-dev-admin, repositories, update, *, allow
+      p, role:po1-k8-dev-admin, repositories, delete, *, allow
+      g, "73111ee7-c320-40fd-abb0-05dbb31eb80d", role:po1-argo-dev-sso-users-admin
