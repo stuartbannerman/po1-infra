@@ -25,6 +25,19 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
+  ignoreDifferences:
+  - group: apps
+    kind: Deployment
+    namespace: po1
+    name: dev-po1-nextjs
+    jsonPointers:
+    - /spec/replicas
+  - group: apps
+    kind: Deployment
+    namespace: po1
+    name: dev-po1-gateway
+    jsonPointers:
+    - /spec/replicas
 ---
 apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
