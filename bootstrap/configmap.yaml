@@ -35,13 +35,8 @@ data:
   # Can login, but given no roles/access to anything
   policy.default: role:""
   policy.csv: |
-      p, role:po1-k8-dev-admin, applications, *, */*, allow
-      p, role:po1-k8-dev-admin, clusters, get, *, allow
-      p, role:po1-k8-dev-admin, repositories, get, *, allow
-      p, role:po1-k8-dev-admin, repositories, create, *, allow
-      p, role:po1-k8-dev-admin, repositories, update, *, allow
-      p, role:po1-k8-dev-admin, repositories, delete, *, allow
-      g, "73111ee7-c320-40fd-abb0-05dbb31eb80d", role:po1-argo-dev-sso-users-admin
+      p, role:po1-k8-dev-admin, *, *, */*, allow
+      g, "73111ee7-c320-40fd-abb0-05dbb31eb80d", role:po1-k8-dev-admin
       g, "7e7591f16-e7ec-4d5c-8780-d11b7e8e1a13", role:readonly
 
 # ID: Group name
