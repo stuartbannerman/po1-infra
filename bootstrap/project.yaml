@@ -41,7 +41,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: keda
-  namespace: keda
+  namespace: argocd
 spec:
   clusterResourceWhitelist:
     - group: '*'
