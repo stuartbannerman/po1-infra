@@ -32,7 +32,8 @@ metadata:
     app.kubernetes.io/name: argocd-rbac-cm
     app.kubernetes.io/part-of: argocd
 data:
-  policy.default: role:readonly
+  # Can login, but given no roles/access to anything
+  policy.default: role:""
   policy.csv: |
       p, role:po1-k8-dev-admin, applications, *, */*, allow
       p, role:po1-k8-dev-admin, clusters, get, *, allow
@@ -41,3 +42,8 @@ data:
       p, role:po1-k8-dev-admin, repositories, update, *, allow
       p, role:po1-k8-dev-admin, repositories, delete, *, allow
       g, "73111ee7-c320-40fd-abb0-05dbb31eb80d", role:po1-argo-dev-sso-users-admin
+      g, "7e7591f16-e7ec-4d5c-8780-d11b7e8e1a13", role:readonly
+
+# ID: Group name
+# 73111ee7-c320-40fd-abb0-05dbb31eb80d: po1-argo-dev-sso-users-admin
+# 7e7591f16-e7ec-4d5c-8780-d11b7e8e1a13: po1-argo-dev-sso-users-readonly
