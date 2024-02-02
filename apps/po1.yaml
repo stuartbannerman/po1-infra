@@ -50,7 +50,7 @@ spec:
   minReplicaCount: 1  # We don't want pods if the queue is empty
   maxReplicaCount: 5  # We don't want to have more than 5 replicas
   pollingInterval: 10 # How frequently we should go for metrics (in seconds)
-  cooldownPeriod:  60 # How many seconds should we wait for downscale
+  cooldownPeriod:  10 # How many seconds should we wait for downscale
   triggers:
   - type: aws-sqs-queue
     authenticationRef:
