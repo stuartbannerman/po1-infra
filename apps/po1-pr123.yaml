@@ -20,6 +20,9 @@ spec:
     - repoURL: https://github.com/stuartbannerman/po1-nextjs-infra
       path: envs/dev-pr123
       targetRevision: HEAD
+    - repoURL: https://github.com/stuartbannerman/po1-b2c-cms-infra
+      path: envs/dev-pr123
+      targetRevision: HEAD
   syncPolicy:
     automated: {}
     syncOptions:
