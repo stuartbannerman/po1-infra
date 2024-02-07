@@ -12,10 +12,10 @@ spec:
   project: default
   sources:
   - repoURL: https://github.com/stuartbannerman/po1-infra
-    path: bootstrap
+    path: envs/dev/bootstrap
     targetRevision: HEAD
   - repoURL: https://github.com/stuartbannerman/po1-infra
-    path: apps
+    path: env/dev/apps
     targetRevision: HEAD
   syncPolicy:
     automated:
