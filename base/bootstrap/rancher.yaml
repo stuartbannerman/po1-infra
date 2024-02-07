@@ -17,11 +17,11 @@ spec:
       helm:
         valueFiles:
         # $values reference the below repo
-        - $values/envs/dev/values/rancher.yaml
+        - $po1-infra/envs/dev/values/rancher.yaml
       # Repo that stores the values for the above chart
     - repoURL: https://github.com/stuartbannerman/po1-infra
       targetRevision: HEAD
-      ref: values
+      ref: po1-infra
   syncPolicy:
     automated:
       prune: true
