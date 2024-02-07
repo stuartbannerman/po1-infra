@@ -3,8 +3,8 @@ kind: Application
 metadata:
   name: rancher
   namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
+  # finalizers:
+  # - resources-finalizer.argocd.argoproj.io
 spec:
   project: rancher
   destination:
@@ -23,7 +23,10 @@ spec:
       targetRevision: HEAD
       ref: values
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      allowEmpty: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
