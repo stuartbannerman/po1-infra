@@ -5,9 +5,9 @@ namespace: argocd
 nameSuffix: ''
 
 resources:
-- ../../../base
+- ../../../base/apps
 
 components:
-- ../../../variants/dev
+- ../../../variants/dev/apps
 
 patchesStrategicMerge: []
