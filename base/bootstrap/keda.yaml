@@ -3,8 +3,8 @@ kind: Application
 metadata:
   name: keda
   namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
+  # finalizers:
+  # - resources-finalizer.argocd.argoproj.io
 spec:
   project: keda
   source:
@@ -28,7 +28,10 @@ spec:
     namespace: keda
     server: https://kubernetes.default.svc
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      allowEmpty: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
