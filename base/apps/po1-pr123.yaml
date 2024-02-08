@@ -31,3 +31,22 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
+  ignoreDifferences:
+  - group: apps
+    kind: Deployment
+    namespace: po1
+    name: po1-nextjs
+    jsonPointers:
+    - /spec/replicas
+  - group: apps
+    kind: Deployment
+    namespace: po1
+    name: po1-gateway
+    jsonPointers:
+    - /spec/replicas
+  - group: ''
+    kind: Secret
+    name: po1-b2c-cms
+    namespace: po1
+    jsonPointers:
+    - /data/umbracoDbDSN
