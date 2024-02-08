@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- argocd.yaml
+- configmap.yaml
+- echo.yaml
+- external-secrets.yaml
+- ingress.yaml
+- keda.yaml
+- project.yaml
+- rancher.yaml
+- secret.yaml
+- service.yaml
+- serviceaccount.yaml
