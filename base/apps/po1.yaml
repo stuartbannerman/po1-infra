@@ -44,3 +44,9 @@ spec:
     name: po1-gateway
     jsonPointers:
     - /spec/replicas
+  - group: ''
+    kind: Secret
+    name: po1-b2c-cms
+    namespace: po1
+    jsonPointers:
+    - /data/umbracoDbDSN
